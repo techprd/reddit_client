@@ -2,6 +2,9 @@
 // this list view will contain the list of the subreddits that we want to display
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'reddit_page.dart';
 
 class HomeScreen extends StatelessWidget {
   final String title;
@@ -23,7 +26,8 @@ class HomeScreen extends StatelessWidget {
         // also we can add a trailing icon and colors
         // and onTap we can navigate to the subreddit screen but for now lets just print the subreddit name
         return ListTile(
-          onTap: () => print('${redditNames[index]} tapped'),
+          // navigate to the subreddit page
+          onTap: () => Get.to(RedditPage(redditPageName: redditNames[index])),
           leading: const Icon(
             Icons.reddit_outlined,
             color: Colors.deepOrangeAccent,
