@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         // and onTap we can navigate to the subreddit screen but for now lets just print the subreddit name
         return ListTile(
           // navigate to the subreddit page
-          onTap: () => Get.to(RedditPage(redditPageName: redditNames[index])),
+          onTap: () => Get.to(() => RedditPage(redditPageName: redditNames[index])),
           leading: const Icon(
             Icons.reddit_outlined,
             color: Colors.deepOrangeAccent,
